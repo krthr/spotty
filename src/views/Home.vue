@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-container id="home" fluid>
+    <v-row>
+      <v-col class="py-0" cols="auto">
+        <router-link
+          active-class="font-weight-bold"
+          class="white--text subtitle-2"
+          :to="{ name: 'featured' }"
+          >FEATURED</router-link
+        >
+      </v-col>
+      <v-col class="py-0" cols="auto">
+        <router-link
+          active-class="font-weight-bold"
+          class="white--text subtitle-2"
+          :to="{ name: 'genres' }"
+          >GENRES & MOODS</router-link
+        >
+      </v-col>
+      <v-col class="py-0" cols="auto">
+        <router-link
+          active-class="font-weight-bold"
+          class="white--text subtitle-2"
+          :to="{ name: 'discover' }"
+          >DISCOVER</router-link
+        >
+      </v-col>
+    </v-row>
+
+    <router-view></router-view>
+  </v-container>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "home",
-  components: {
-    HelloWorld
-  }
+  name: "home"
 };
 </script>
