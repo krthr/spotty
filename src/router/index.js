@@ -1,23 +1,72 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: Home
+    component: () =>
+      import(/* webpackChunkName: "app-layout" */ "../layouts/AppLayout.vue"),
+    children: [
+      {
+        path: "browse",
+        component: () => import("../views/Home.vue"),
+        children: [
+          {
+            path: "featured",
+            name: "featured",
+            component: () => import("../views/Featured.vue")
+          },
+          {
+            path: "genres",
+            name: "genres",
+            component: () => import("../views/Genres.vue")
+          },
+          {
+            path: "discover",
+            name: "discover",
+            component: () => import("../views/Discover.vue")
+          },
+          {
+            path: "",
+            redirect: "/browse/featured"
+          }
+        ]
+      },
+      {
+        path: "search",
+        name: "search",
+        component: () => import("../views/Search.vue")
+      },
+      {
+        path: "queue",
+        name: "queue",
+        component: () => import("../views/Queue.vue")
+      },
+      {
+        path: "*",
+        redirect: {
+          name: "featured"
+        }
+      }
+    ],
+    meta: {
+      isAuthRequired: true
+    }
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/auth",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "auth-layout" */ "../layouts/AuthLayout.vue"),
+    children: [
+      {
+        path: "login",
+        name: "login",
+        component: () =>
+          import(/* webpackChunkName: "login" */ "../views/Login.vue")
+      }
+    ]
   }
 ];
 
@@ -25,6 +74,16 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  // TODO Implemnt auth logic here
+
+  if (to.matched.some(r => r.meta.isAuthRequired)) {
+    // verify if the user is authenticated
+  }
+
+  next();
 });
 
 export default router;
