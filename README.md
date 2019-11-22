@@ -1,22 +1,27 @@
-# spotty
+# [spotty](https://krthr.github.io/spotty/)
 
 > Spotify web clone build with Vue.js and Vuetify
+
+## DEMO: https://krthr.github.io/spotty/
 
 ## Screenshoots
 
 ### Search page
+
 ![Search page](./public/screenshots/search-page.png)
 
 ### Genres page
+
 ![Genres pages](./public/screenshots/genres-page.png)
 
 ## Pages
+
 - [x] Album
 - [ ] Artist
 - [x] Discover
 - [x] Feauted
 - [x] Genres & Moods
-- [x] Login *
+- [x] Login \*
 - [x] Play Queue
 - [ ] Sign Up
 
