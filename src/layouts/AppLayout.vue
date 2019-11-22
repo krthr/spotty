@@ -24,16 +24,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      app
-      class="elevation-0"
-      dense
-    >
+    <v-app-bar app class="elevation-0" dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
 
-    <v-content class="pb-10">
-      <router-view class="pa-5 pb-12"></router-view>
+    <v-content class="pb-12">
+      <router-view class="pa-5" style="padding-bottom: 140px !important"></router-view>
     </v-content>
 
     <v-footer class="elevation-10" app fixed style="z-index: 10">
