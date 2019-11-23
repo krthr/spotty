@@ -11,13 +11,6 @@ export default {
 </script>
 
 <style>
-.album-card .v-overlay__content,
-.artist-card .v-overlay__content {
-  position: absolute !important;
-  bottom: 10px;
-  right: 10px;
-}
-
 a {
   color: inherit !important;
   text-decoration: none !important;
