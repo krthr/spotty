@@ -40,6 +40,11 @@ const routes = [
         component: () => import("../views/Album.vue")
       },
       {
+        path: "artist/:id",
+        name: "artist",
+        component: () => import("../views/Artist.vue")
+      },
+      {
         path: "search",
         name: "search",
         component: () => import("../views/Search.vue")
