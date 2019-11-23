@@ -6,7 +6,7 @@
 
         <v-subheader>ACTUAL</v-subheader>
 
-        <song-list total="1"></song-list>
+        <song-list :total="1"></song-list>
 
         <v-list style="background: none">
           <v-subheader>NEXT</v-subheader>

@@ -11,13 +11,35 @@
             >
               <v-overlay absolute opacity="0" :value="hover">
                 <v-icon size="35">mdi-play-circle-outline</v-icon>
-              </v-overlay></v-img
-            ></v-col
-          >
+              </v-overlay>
+            </v-img>
+          </v-col>
           <v-col>
             <v-list-item-title>
-              <v-list-item-title>Siento Miedo de Pensar</v-list-item-title>
-              <v-list-item-subtitle>Rosario Alfonso</v-list-item-subtitle>
+              <v-list-item-title>
+                <router-link
+                  :to="{
+                    name: 'album',
+                    params: {
+                      id: 1
+                    }
+                  }"
+                >
+                  Siento Miedo de Pensar
+                </router-link>
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                <router-link
+                  :to="{
+                    name: 'artist',
+                    params: {
+                      id: 1
+                    }
+                  }"
+                >
+                  Rosario Alfonso
+                </router-link>
+              </v-list-item-subtitle>
             </v-list-item-title>
           </v-col>
         </v-row>

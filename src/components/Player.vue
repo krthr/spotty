@@ -12,16 +12,40 @@
         </v-col>
         <v-col class="pl-1 text-truncate">
           <span>
-            <router-link class="body-2 font-weight-medium ma-0" to="#">
+            <router-link
+              class="body-2 font-weight-medium ma-0"
+              :to="{
+                name: 'album',
+                params: {
+                  id: 1
+                }
+              }"
+            >
               The Moon Song - Film Version
             </router-link>
           </span>
           <br />
           <span class="caption font-weight-light">
-            <router-link class="ma-0" to="#">
+            <router-link
+              class="ma-0"
+              :to="{
+                name: 'artist',
+                params: {
+                  id: 1
+                }
+              }"
+            >
               Scarlett Johansson </router-link
             >,
-            <router-link class="ma-0" to="#">
+            <router-link
+              class="ma-0"
+              :to="{
+                name: 'artist',
+                params: {
+                  id: 1
+                }
+              }"
+            >
               Joaquin Phoenix
             </router-link>
           </span>

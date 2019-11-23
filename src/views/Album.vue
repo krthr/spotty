@@ -26,7 +26,15 @@
               A little girl, a little boy, and all the snails they have drawn
             </p>
             <p class="subtitle-1 mb-4">
-              The Delano Orchestra
+              <router-link
+                :to="{
+                  name: 'artist',
+                  params: {
+                    id: 1
+                  }
+                }"
+                >The Delano Orchestra</router-link
+              >
             </p>
 
             <p class="caption">2008 • 14 SONGS</p>
