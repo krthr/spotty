@@ -41,8 +41,19 @@ const routes = [
       },
       {
         path: "artist/:id",
-        name: "artist",
-        component: () => import("../views/Artist.vue")
+        component: () => import("../views/Artist.vue"),
+        children: [
+          {
+            path: "",
+            name: "artist",
+            component: () => import("../views/ArtistOverview.vue")
+          },
+          {
+            path: "about",
+            name: "artist-about",
+            component: () => import("../views/ArtistAbout.vue")
+          }
+        ]
       },
       {
         path: "search",
