@@ -2,7 +2,9 @@
   <v-app>
     <v-navigation-drawer v-model="drawer" app>
       <div class="pa-5">
-        <h1>Spotty</h1>
+        <h1>
+          <router-link to="/">Spotty</router-link>
+        </h1>
       </div>
 
       <v-list>
@@ -29,7 +31,10 @@
     </v-app-bar>
 
     <v-content class="pb-12">
-      <router-view class="pa-5" style="padding-bottom: 140px !important"></router-view>
+      <router-view
+        class="pa-5"
+        style="padding-bottom: 140px !important"
+      ></router-view>
     </v-content>
 
     <v-footer class="elevation-10" app fixed style="z-index: 10">
