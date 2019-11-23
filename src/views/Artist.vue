@@ -30,7 +30,7 @@
       </v-col>
     </v-row>
 
-    <router-view></router-view>
+    <router-view class="px-7"></router-view>
   </v-container>
 </template>
 
